@@ -1,0 +1,177 @@
+.garbage-detector {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.upload-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.file-input {
+  padding: 10px;
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.detect-button {
+  padding: 12px 24px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.detect-button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.detect-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.detection-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.detection-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.results-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.results-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stats {
+  margin-bottom: 25px;
+}
+
+.stats h3 {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.class-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.count {
+  background: #007bff;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.detections-list h3 {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.detection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.detection-class {
+  font-weight: bold;
+  color: #333;
+}
+
+.detection-confidence {
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .garbage-detector {
+    padding: 15px;
+  }
+  
+  .upload-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .stat-item,
+  .detection-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
