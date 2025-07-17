@@ -123,6 +123,17 @@ npm start
 
 ## 训练模型
 
+### 训练数据
+[生活垃圾数据集YOLO版](https://gitcode.com/open-source-toolkit/875cd)
+解压后，将ImageSet中的文件（夹）放到本项目的data目录下
+```
+d-----         2025/7/17      0:42                data-txt
+d-----         2025/7/17      0:43                images
+d-----         2025/7/17     11:26                labels
+-a----          2021/9/6     20:15             63 classes.txt
+```
+
+### 打开Jupter，训练模型
 安装启动jupyter notebook
 ```bash
 pip install notebook
