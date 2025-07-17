@@ -36,14 +36,6 @@ try:
     print(f"模型路径: {MODEL_PATH}")
 except Exception as e:
     print(f"模型加载失败: {e}")
-    # 备用模型路径
-    try:
-        MODEL_PATH = "../models/yolov8n.pt"
-        model = YOLO(MODEL_PATH)
-        print(f"使用备用模型: {MODEL_PATH}")
-    except Exception as e2:
-        print(f"备用模型也加载失败: {e2}")
-        model = None
 
 # 垃圾分类标签
 CLASS_NAMES = {

@@ -14,32 +14,49 @@
 
 - 可回收垃圾 (Recyclable waste)
 - 有害垃圾 (Hazardous waste)  
-- 厨余垃圾 (Kitchen waste)
-- 其他垃圾 (Other waste)
+- 湿垃圾 (Kitchen waste)
+- 干垃圾 (Other waste)
 
 ## 系统架构
 
 ```
-├── backend/          # FastAPI后端服务
-│   ├── main.py      # 主要API服务
-│   └── requirements.txt
-├── frontend/         # React前端应用
+├── backend/                    # FastAPI后端服务
+│   └── main.py                 # 主要API服务
+├── frontend/                   # React前端应用
 │   ├── src/
 │   │   ├── GarbageDetector.js  # 主检测组件
 │   │   └── GarbageDetector.css # 样式文件
 │   └── package.json
-├── models/           # YOLO模型文件
-├── uploads/          # 上传图片存储
-└── start_system.bat  # 一键启动脚本
+├── models/                     # YOLO模型文件
+├── uploads/                    # 上传图片存储
+└── yolo-v8.ipynb               # 一键启动脚本
 ```
 
 ## 快速开始
 
-#### 启动后端
+#### 后端
 
+##### 安装依赖
+有GPU，安装GPU版本的pytorch及ultralytics
+```bash
+conda install -c pytorch -c nvidia -c conda-forge pytorch torchvision pytorch-cuda=11.8 ultralytics
+```
+无GPU，安装CPU版本的pytorch及ultralytics
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install ultralytics
+```
+
+安装其他依赖包
+```bash
+pip install fastapi
+pip install python-multipart
+pip install uvicorn
+```
+
+##### 启动
 ```bash
 cd backend
-pip install -r requirements.txt
 python main.py
 ```
 
@@ -104,10 +121,18 @@ npm start
 - HTML5 Canvas - 检测框绘制
 - CSS3 - 样式设计
 
+## 训练模型
+
+安装启动jupyter notebook
+```bash
+pip install notebook
+jupyter notebook
+```
+
 ## 注意事项
 
 1. 确保已安装Python 3.8+和Node.js 14+
-2. 模型文件路径：`models/yolov8n.pt`
+2. 训练后的模型文件路径：`runs/detect/waste_detection/weights/best.pt`
 3. 上传的图片会保存在 `uploads/` 目录
 4. 支持的图片格式：JPG, PNG, BMP等常见格式
 
